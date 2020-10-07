@@ -33,15 +33,12 @@ export function BrowseContainer({ slides }) {
     });
     const results = fuse.search(searchTerm).map(({ item }) => item);
 
-    console.log('searchTerm', searchTerm);
-    console.log('results', results);
-
     if (slideRows.length > 0 && searchTerm.length > 3 && results.length > 0) {
       setSlideRows(results);
     } else {
       setSlideRows(slides[category]);
     }
-  }, [searchTerm, slides, category]);
+  }, [searchTerm, slides, category, slideRows]);
 
   return profile.displayName ? (
     <>
